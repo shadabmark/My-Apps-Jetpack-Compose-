@@ -4,4 +4,6 @@
     <style name="Theme.UnitConverter" parent="android:Theme.Material.Light.NoActionBar" />
 
     <style name="Theme.Unit_C_Example" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.QuotesApp" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>

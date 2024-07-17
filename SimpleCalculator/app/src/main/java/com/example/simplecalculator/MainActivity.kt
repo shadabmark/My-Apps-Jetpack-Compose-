@@ -28,8 +28,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.simplecalculator.ui.theme.SimpleCalculatorTheme
 import java.time.format.TextStyle
 
@@ -57,11 +59,11 @@ class MainActivity : ComponentActivity() {
                 Spacer(modifier = Modifier.height(25.dp))
                 TextField(value = num1, onValueChange = {
                     num1 = it
-                })
+                }, singleLine = true)
                 Spacer(modifier = Modifier.height(12.dp))
                 TextField(value = num2, onValueChange = {
                     num2 = it
-                })
+                }, singleLine = true)
                 Spacer(modifier = Modifier.height(20.dp))
                 Text("Answer: $outputValue")
 
@@ -71,14 +73,19 @@ class MainActivity : ComponentActivity() {
                         var result = num1.toInt() + num2.toInt()
                         outputValue = result.toString()
                     }) {
-                        Text("Add:")
+                        Text("+",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp
+                        )
                     }
                     Spacer(modifier = Modifier.width(50.dp))
                     Button(onClick = {
                         var result = num1.toInt() - num2.toInt()
                         outputValue = result.toString()
                     }) {
-                        Text("Sub")
+                        Text("-",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp)
                     }
                 }
                 Spacer(modifier = Modifier.height(18.dp))
@@ -87,14 +94,18 @@ class MainActivity : ComponentActivity() {
                         var result = num1.toInt() * num2.toInt()
                         outputValue = result.toString()
                     }) {
-                        Text("Mul")
+                        Text("x",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp)
                     }
                     Spacer(modifier = Modifier.width(50.dp))
                     Button(onClick = {
-                        val result = num1.toInt() / num2.toInt()
+                        val result = num1.toDouble() / num2.toDouble()
                         outputValue = result.toString()
                     }) {
-                        Text("Div")
+                        Text("/",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp)
                     }
                 }
             }

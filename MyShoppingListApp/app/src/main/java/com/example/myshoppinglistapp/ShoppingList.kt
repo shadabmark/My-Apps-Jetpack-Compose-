@@ -201,7 +201,6 @@ fun NoteItemEditor(item: NoteListItem, onEditComplete:(String, Int) -> Unit){
                     .wrapContentSize()
                     .padding(8.dp)
             )
-
         }
         Button(onClick = {
             isEditing = false
